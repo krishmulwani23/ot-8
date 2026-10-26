@@ -1,0 +1,95 @@
+diff --git a/kernel/proc.h b/kernel/proc.h
+index d021857..e48b301 100644
+--- a/kernel/proc.h
++++ b/kernel/proc.h
+@@ -1,5 +1,11 @@
++#define NMLFQ_LEVELS  3  // Priority levels: 0 (highest), 1, 2 (lowest)
++#define BOOST_TICKS 100  // Starvation prevention boost interval
++extern const int mlfq_slice[NMLFQ_LEVELS];
++
+ // Saved registers for kernel context switches.
+ struct context {
+@@ -104,4 +110,10 @@ struct proc {
+   struct file *ofile[NOFILE];  // Open files
+   struct inode *cwd;           // Current directory
+   char name[16];               // Process name (debugging)
++
++  // MLFQ additions:
++  int priority;                // Current priority level (0, 1, 2)
++  int ticks_used;              // Ticks consumed in current time slice
++  int total_runtime;           // Total ticks running on CPU
++  int wait_time;               // Total ticks waiting in RUNNABLE queue
++  int num_run;                 // Number of context switches into this process
++  int ticks_at_level[NMLFQ_LEVELS]; // Tick distribution across queues
+ };
+diff --git a/kernel/proc.c b/kernel/proc.c
+index 959b770..8a41203 100644
+--- a/kernel/proc.c
++++ b/kernel/proc.c
+@@ -10,6 +10,8 @@ struct cpu cpus[NCPU];
+ struct proc proc[NPROC];
+ 
++const int mlfq_slice[NMLFQ_LEVELS] = { 1, 2, 4 };
++static int total_ticks_since_boost = 0;
++
++void
++priority_boost(void)
++{
++  struct proc *p;
++  for(p = proc; p < &proc[NPROC]; p++) {
++    acquire(&p->lock);
++    if(p->state != UNUSED) {
++      p->priority = 0;
++      p->ticks_used = 0;
++    }
++    release(&p->lock);
++  }
++}
++
+ void
+ scheduler(void)
+ {
+   struct proc *p;
+   struct cpu *c = mycpu();
+   c->proc = 0;
++
+   for(;;){
+     intr_on();
++
++    if(total_ticks_since_boost >= BOOST_TICKS) {
++      priority_boost();
++      total_ticks_since_boost = 0;
++    }
++
++    struct proc *best_proc = 0;
++    for(int level = 0; level < NMLFQ_LEVELS; level++) {
++      for(p = proc; p < &proc[NPROC]; p++) {
++        acquire(&p->lock);
++        if(p->state == RUNNABLE && p->priority == level) {
++          best_proc = p;
++          break;
++        }
++        release(&p->lock);
++      }
++      if(best_proc) break;
++    }
++
++    if(best_proc) {
++      best_proc->state = RUNNING;
++      best_proc->num_run++;
++      c->proc = best_proc;
++      swtch(&c->context, &best_proc->context);
++      c->proc = 0;
++      release(&best_proc->lock);
++    }
+   }
+ }
+diff --git a/kernel/syscall.h b/kernel/syscall.h
+index bc5f356..6e9f187 100644
+--- a/kernel/syscall.h
++++ b/kernel/syscall.h
+@@ -20,3 +20,5 @@
+ #define SYS_mkdir  20
+ #define SYS_close  21
++#define SYS_schedstat 22
++#define SYS_memstat   23
