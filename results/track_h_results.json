@@ -1,0 +1,123 @@
+{
+  "index_selection": {
+    "budget_kb": 400,
+    "greedy": {
+      "method": "Greedy",
+      "selected_indexes": [
+        "idx_ord_custkey",
+        "idx_ord_orderdate",
+        "idx_cust_mktseg"
+      ],
+      "total_benefit_ms": 3.7322999658295886,
+      "total_size_kb": 245,
+      "runtime_ms": 0.17040000238921493
+    },
+    "dynamic_programming": {
+      "method": "DynamicProgramming",
+      "selected_indexes": [
+        "idx_ord_orderdate",
+        "idx_cust_mktseg",
+        "idx_li_suppkey"
+      ],
+      "total_benefit_ms": 5.419999967468902,
+      "total_size_kb": 385,
+      "runtime_ms": 1.6078000044217333
+    },
+    "ilp_highs": {
+      "method": "ILP_HiGHS",
+      "selected_indexes": [
+        "idx_ord_orderdate",
+        "idx_cust_mktseg",
+        "idx_li_suppkey"
+      ],
+      "total_benefit_ms": 5.419999967468902,
+      "total_size_kb": 385,
+      "runtime_ms": 34.74469999491703
+    }
+  },
+  "query_performance": {
+    "baseline_latencies_ms": {
+      "Q1_Lineitem_Aggregation": 8.818100002827123,
+      "Q2_Customer_Orders_Join": 1.693599988357164,
+      "Q3_Multi_Table_Join": 8.542399998987094
+    },
+    "optimized_latencies_ms": {
+      "Q1_Lineitem_Aggregation": 6.639200000790879,
+      "Q2_Customer_Orders_Join": 158.1066000071587,
+      "Q3_Multi_Table_Join": 6.015400009346195
+    },
+    "overall_speedup": 0.1115833104255619,
+    "total_baseline_ms": 19.05409999017138,
+    "total_optimized_ms": 170.76120001729578,
+    "results_identical": true
+  },
+  "query_plans_explain": {
+    "baseline_plans": {
+      "Q1_Lineitem_Aggregation": [
+        "6|0|216|SCAN lineitem",
+        "10|0|0|USE TEMP B-TREE FOR GROUP BY"
+      ],
+      "Q2_Customer_Orders_Join": [
+        "9|0|216|SCAN orders",
+        "13|0|45|SEARCH customer USING INTEGER PRIMARY KEY (rowid=?)",
+        "18|0|0|USE TEMP B-TREE FOR GROUP BY",
+        "70|0|0|USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "Q3_Multi_Table_Join": [
+        "10|0|216|SCAN lineitem",
+        "14|0|45|SEARCH orders USING INTEGER PRIMARY KEY (rowid=?)",
+        "19|0|45|SEARCH customer USING INTEGER PRIMARY KEY (rowid=?)",
+        "24|0|0|USE TEMP B-TREE FOR GROUP BY",
+        "80|0|0|USE TEMP B-TREE FOR ORDER BY"
+      ]
+    },
+    "optimized_plans": {
+      "Q1_Lineitem_Aggregation": [
+        "6|0|216|SCAN lineitem",
+        "10|0|0|USE TEMP B-TREE FOR GROUP BY"
+      ],
+      "Q2_Customer_Orders_Join": [
+        "11|0|62|SEARCH customer USING INDEX idx_cust_mktseg (c_mktsegment=?)",
+        "16|0|204|SEARCH orders USING INDEX idx_ord_orderdate (o_orderdate>?)",
+        "64|0|0|USE TEMP B-TREE FOR ORDER BY"
+      ],
+      "Q3_Multi_Table_Join": [
+        "10|0|216|SCAN lineitem",
+        "14|0|45|SEARCH orders USING INTEGER PRIMARY KEY (rowid=?)",
+        "19|0|44|SEARCH customer USING COVERING INDEX idx_cust_mktseg (c_mktsegment=? AND rowid=?)",
+        "25|0|0|USE TEMP B-TREE FOR GROUP BY",
+        "81|0|0|USE TEMP B-TREE FOR ORDER BY"
+      ]
+    }
+  },
+  "buffer_cache_policies": {
+    "capacities": [
+      20,
+      40,
+      80,
+      120,
+      200
+    ],
+    "LRU": [
+      0.4228571428571429,
+      0.8125714285714286,
+      0.8125714285714286,
+      0.8125714285714286,
+      0.8125714285714286
+    ],
+    "TwoQueue": [
+      0.6234285714285714,
+      0.8125714285714286,
+      0.8125714285714286,
+      0.8125714285714286,
+      0.8131428571428572
+    ],
+    "Clock": [
+      0.42914285714285716,
+      0.8125714285714286,
+      0.8125714285714286,
+      0.8125714285714286,
+      0.8125714285714286
+    ]
+  }
+}

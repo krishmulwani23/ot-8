@@ -1,0 +1,84 @@
+{
+  "round_robin_baseline": {
+    "mean_turnaround": 107.66666666666667,
+    "mean_response": 2.3333333333333335,
+    "total_context_switches": 130,
+    "jains_fairness": 0.8318566646977752,
+    "process_stats": {
+      "cpu_bound": {
+        "pid": 1,
+        "turnaround_time": 124,
+        "response_time": 1,
+        "wait_time": 53,
+        "runtime": 70,
+        "io_time": 2,
+        "context_switches": 70,
+        "final_priority": 0
+      },
+      "io_bound": {
+        "pid": 2,
+        "turnaround_time": 70,
+        "response_time": 2,
+        "wait_time": 13,
+        "runtime": 24,
+        "io_time": 44,
+        "context_switches": 24,
+        "final_priority": 0
+      },
+      "mixed_interactive": {
+        "pid": 3,
+        "turnaround_time": 129,
+        "response_time": 4,
+        "wait_time": 69,
+        "runtime": 36,
+        "io_time": 30,
+        "context_switches": 36,
+        "final_priority": 0
+      }
+    }
+  },
+  "mlfq_optimized": {
+    "mean_turnaround": 105.0,
+    "mean_response": 1.3333333333333333,
+    "total_context_switches": 56,
+    "jains_fairness": 0.8318566646977752,
+    "process_stats": {
+      "cpu_bound": {
+        "pid": 1,
+        "turnaround_time": 125,
+        "response_time": 1,
+        "wait_time": 54,
+        "runtime": 70,
+        "io_time": 2,
+        "context_switches": 27,
+        "final_priority": 2
+      },
+      "io_bound": {
+        "pid": 2,
+        "turnaround_time": 61,
+        "response_time": 2,
+        "wait_time": 4,
+        "runtime": 24,
+        "io_time": 44,
+        "context_switches": 13,
+        "final_priority": 1
+      },
+      "mixed_interactive": {
+        "pid": 3,
+        "turnaround_time": 129,
+        "response_time": 1,
+        "wait_time": 69,
+        "runtime": 36,
+        "io_time": 30,
+        "context_switches": 16,
+        "final_priority": 2
+      }
+    }
+  },
+  "improvements": {
+    "mean_turnaround_improvement_pct": 2.476780185758518,
+    "mean_response_improvement_pct": 42.85714285714287,
+    "io_response_speedup": 1.0,
+    "interactive_response_speedup": 4.0
+  }
+}

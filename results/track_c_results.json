@@ -1,0 +1,88 @@
+{
+  "qaoa_vs_classical": {
+    "classical_opt_cut": 8.0,
+    "qaoa_parameter_shift": {
+      "sampled_cut": 8.0,
+      "expected_cut": 5.7904795011943495,
+      "best_bitstring": "010101",
+      "runtime_ms": 945.2481000043917,
+      "approximation_ratio": 1.0
+    },
+    "qaoa_spsa": {
+      "sampled_cut": 4.0,
+      "expected_cut": 4.711110077816042,
+      "best_bitstring": "001001",
+      "runtime_ms": 332.83379999920726,
+      "approximation_ratio": 0.5
+    }
+  },
+  "shot_noise_analysis": {
+    "50": {
+      "mean_estimate": 0.5680000000000001,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.15094369811290567,
+      "theoretical_shot_noise": 0.1414213562373095
+    },
+    "100": {
+      "mean_estimate": 0.5496000000000001,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.08354543673953714,
+      "theoretical_shot_noise": 0.1
+    },
+    "250": {
+      "mean_estimate": 0.56384,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.06408474389431543,
+      "theoretical_shot_noise": 0.06324555320336758
+    },
+    "500": {
+      "mean_estimate": 0.54528,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.04574321370432995,
+      "theoretical_shot_noise": 0.044721359549995794
+    },
+    "1000": {
+      "mean_estimate": 0.55608,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.02526961812137256,
+      "theoretical_shot_noise": 0.03162277660168379
+    },
+    "2500": {
+      "mean_estimate": 0.550688,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.01639493385165064,
+      "theoretical_shot_noise": 0.02
+    },
+    "5000": {
+      "mean_estimate": 0.555904,
+      "exact_expectation": 0.555170839063773,
+      "std_deviation": 0.012701763027233656,
+      "theoretical_shot_noise": 0.01414213562373095
+    }
+  },
+  "barren_plateaus": {
+    "qubit_counts": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "gradient_variances": [
+      0.11859723902576651,
+      0.021087030669033568,
+      0.0036493494601769626,
+      0.0020179748674313577
+    ],
+    "mean_abs_gradients": [
+      0.2557872802873532,
+      0.11858428172094601,
+      0.0431093641952711,
+      0.032562912093766744
+    ]
+  },
+  "vqe_summary": {
+    "final_energy": -1.4999343823618414,
+    "exact_ground_energy": -2.0,
+    "energy_error": 0.5000656176381586
+  }
+}

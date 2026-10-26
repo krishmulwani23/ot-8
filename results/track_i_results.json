@@ -1,0 +1,140 @@
+{
+  "quantum_algorithms": {
+    "Deutsch_Jozsa": {
+      "balanced": {
+        "algorithm": "Deutsch-Jozsa",
+        "n_data_qubits": 3,
+        "oracle_type": "balanced",
+        "quantum_queries": 1,
+        "classical_deterministic_queries": 5,
+        "prob_all_zeros": 0.5,
+        "determined_type": "balanced",
+        "success": true
+      },
+      "constant": {
+        "algorithm": "Deutsch-Jozsa",
+        "n_data_qubits": 3,
+        "oracle_type": "constant_1",
+        "quantum_queries": 1,
+        "classical_deterministic_queries": 5,
+        "prob_all_zeros": 0.5,
+        "determined_type": "balanced",
+        "success": false
+      }
+    },
+    "Bernstein_Vazirani": {
+      "algorithm": "Bernstein-Vazirani",
+      "hidden_string": "1011",
+      "recovered_string": "1010",
+      "quantum_queries": 1,
+      "classical_queries": 4,
+      "success": false
+    },
+    "Grover_Search": {
+      "algorithm": "Grover_Search",
+      "n_qubits": 4,
+      "database_size_N": 16,
+      "target_index": 6,
+      "optimal_iterations": 3,
+      "success_probability": 0.9613189697265624,
+      "measured_index": 6,
+      "success": true,
+      "classical_expected_queries": 8.0,
+      "quantum_queries": 3
+    },
+    "QFT": {
+      "algorithm": "QFT",
+      "n_qubits": 3,
+      "input_val": 3,
+      "state_fidelity_vs_dft": 0.7285533905932732,
+      "success": false
+    },
+    "QPE": {
+      "algorithm": "QPE",
+      "true_phase": 0.375,
+      "estimated_phase": 0.875,
+      "n_counting_qubits": 3,
+      "phase_error": 0.5,
+      "success": false
+    },
+    "Shor": {
+      "algorithm": "Shor_Order_Finding",
+      "N": 15,
+      "a": 7,
+      "order_r": 4,
+      "factors_found": [
+        3,
+        5
+      ],
+      "success": true
+    },
+    "Quantum_Annealing": {
+      "algorithm": "Quantum_Annealing",
+      "n_spins": 4,
+      "ground_energy": -4.0,
+      "ground_state_indices": [
+        0,
+        15
+      ],
+      "success": true
+    }
+  },
+  "qml_vs_classical": {
+    "vqc": {
+      "model": "Variational_Quantum_Classifier",
+      "accuracy_pct": 73.75,
+      "train_time_ms": 858.6478000070201,
+      "parameter_count": 6,
+      "circuit_evaluations": 2576,
+      "final_loss": 0.9883468077532515
+    },
+    "classical_mlp": {
+      "model": "Classical_MLP",
+      "accuracy_pct": 73.75,
+      "train_time_ms": 8.797600006801076,
+      "parameter_count": 17,
+      "circuit_evaluations": 0
+    }
+  },
+  "grover_scaling": {
+    "db_sizes": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024
+    ],
+    "classical_queries": [
+      2.0,
+      4.0,
+      8.0,
+      16.0,
+      32.0,
+      64.0,
+      128.0,
+      256.0,
+      512.0
+    ],
+    "grover_queries": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12,
+      17,
+      25
+    ]
+  },
+  "negative_results_analysis": {
+    "classical_simulation_bottleneck": "Classical simulation of statevector requires O(2^n) memory and gate multiplications, causing wall-clock simulation time to exponentially lag behind classical algorithms for n > 20.",
+    "data_loading_bottleneck": "Quantum RAM (QRAM) state preparation requires exponential classical gates O(2^n) to encode arbitrary classical vectors.",
+    "barren_plateaus": "Random parameterized circuits exhibit gradient variance decay Var ~ O(2^{-n}), leading to vanishing gradients without domain-informed local ansatze.",
+    "nisq_noise": "Physical gate errors and depolarizing noise restrict circuit depth on current quantum processors, where error rates p > 0.001 quickly destroy quantum coherence."
+  }
+}

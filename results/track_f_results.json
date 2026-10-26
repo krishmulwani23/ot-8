@@ -1,0 +1,113 @@
+{
+  "benchmarks": {
+    "Prog1_Arithmetic_CSE_DCE": {
+      "output_unopt": [
+        "90"
+      ],
+      "output_opt": [
+        "90"
+      ],
+      "correctness_verified": true,
+      "unopt_instructions": 10,
+      "opt_instructions": 2,
+      "instruction_reduction": 8,
+      "unopt_cycles": 10,
+      "opt_cycles": 2,
+      "cycle_speedup": 5.0,
+      "compile_time_ms": 0.13810000382363796
+    },
+    "Prog2_Loop_Accumulation": {
+      "output_unopt": [
+        "3050"
+      ],
+      "output_opt": [
+        "3050"
+      ],
+      "correctness_verified": true,
+      "unopt_instructions": 17,
+      "opt_instructions": 15,
+      "instruction_reduction": 2,
+      "unopt_cycles": 412,
+      "opt_cycles": 410,
+      "cycle_speedup": 1.0048780487804878,
+      "compile_time_ms": 0.29830000130459666
+    }
+  },
+  "register_allocation_ilp": {
+    "K=2": {
+      "solver": "ILP_Register_Allocation",
+      "k_registers": 2,
+      "allocation": {
+        "a": "R1",
+        "c": "R2",
+        "dead2": "R2",
+        "e": "R2",
+        "total": "R1"
+      },
+      "spills": [
+        "b",
+        "d",
+        "dead1"
+      ],
+      "spill_count": 3,
+      "status": 0,
+      "runtime_ms": 35.94849999353755
+    },
+    "K=3": {
+      "solver": "ILP_Register_Allocation",
+      "k_registers": 3,
+      "allocation": {
+        "b": "R2",
+        "c": "R1",
+        "dead1": "R1",
+        "dead2": "R3",
+        "e": "R1",
+        "total": "R3"
+      },
+      "spills": [
+        "a",
+        "d"
+      ],
+      "spill_count": 2,
+      "status": 0,
+      "runtime_ms": 24.031100008869544
+    },
+    "K=4": {
+      "solver": "ILP_Register_Allocation",
+      "k_registers": 4,
+      "allocation": {
+        "a": "R3",
+        "b": "R4",
+        "c": "R1",
+        "dead1": "R1",
+        "dead2": "R2",
+        "e": "R1",
+        "total": "R2"
+      },
+      "spills": [
+        "d"
+      ],
+      "spill_count": 1,
+      "status": 0,
+      "runtime_ms": 23.460099997464567
+    },
+    "K=5": {
+      "solver": "ILP_Register_Allocation",
+      "k_registers": 5,
+      "allocation": {
+        "a": "R5",
+        "b": "R4",
+        "c": "R3",
+        "d": "R1",
+        "dead1": "R3",
+        "dead2": "R2",
+        "e": "R2",
+        "total": "R3"
+      },
+      "spills": [],
+      "spill_count": 0,
+      "status": 0,
+      "runtime_ms": 18.465499990270473
+    }
+  }
+}
