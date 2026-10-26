@@ -1,0 +1,8 @@
+# Python virtual environment
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Matplotlib cache
+.matplotlib_cache/
