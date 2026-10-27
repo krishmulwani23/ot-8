@@ -3,54 +3,54 @@
     {
       "track": "Track A (Continuous)",
       "status": "SUCCESS",
-      "time_sec": 10.930865100002848
+      "time_sec": 4.069199699995806
     },
     {
       "track": "Track B (Discrete)",
       "status": "SUCCESS",
-      "time_sec": 7.408544800011441
+      "time_sec": 2.544697500008624
     },
     {
       "track": "Track C (Quantum Opt)",
       "status": "SUCCESS",
-      "time_sec": 8.36903150001308
+      "time_sec": 2.8879951999988407
     },
     {
       "track": "Track D (Submodular & Parallel)",
       "status": "SUCCESS",
-      "time_sec": 42.8159624000109
+      "time_sec": 13.11762639999506
     },
     {
       "track": "Track E (Main Case Study)",
       "status": "SUCCESS",
-      "time_sec": 7.708866799992393
+      "time_sec": 3.153821899992181
     },
     {
       "track": "Track F (Compiler Opt)",
       "status": "SUCCESS",
-      "time_sec": 10.530976299996837
+      "time_sec": 2.8699148999876343
     },
     {
       "track": "Track G (xv6 OS)",
       "status": "SUCCESS",
-      "time_sec": 5.316875600008643
+      "time_sec": 1.8314192999969237
     },
     {
       "track": "Track H (DBMS Opt)",
       "status": "SUCCESS",
-      "time_sec": 8.513093399989884
+      "time_sec": 3.8785996999940835
     },
     {
       "track": "Track I (Quantum Algorithms)",
       "status": "SUCCESS",
-      "time_sec": 5.889698899991345
+      "time_sec": 2.1987975999945775
     },
     {
       "track": "Track J (Software Eng)",
       "status": "SUCCESS",
-      "time_sec": 6.650687000001199
+      "time_sec": 2.470955299999332
     }
   ],
   "all_tests_passed": true,
-  "total_runtime_seconds": 118.98330329998862
+  "total_runtime_seconds": 40.64168589998735
 }

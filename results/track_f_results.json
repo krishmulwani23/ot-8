@@ -14,7 +14,7 @@
       "unopt_cycles": 10,
       "opt_cycles": 2,
       "cycle_speedup": 5.0,
-      "compile_time_ms": 0.13810000382363796
+      "compile_time_ms": 0.09750001481734216
     },
     "Prog2_Loop_Accumulation": {
       "output_unopt": [
@@ -30,7 +30,7 @@
       "unopt_cycles": 412,
       "opt_cycles": 410,
       "cycle_speedup": 1.0048780487804878,
-      "compile_time_ms": 0.29830000130459666
+      "compile_time_ms": 0.1503999810665846
     }
   },
   "register_allocation_ilp": {
@@ -51,7 +51,7 @@
       ],
       "spill_count": 3,
       "status": 0,
-      "runtime_ms": 35.94849999353755
+      "runtime_ms": 9.386000019731
     },
     "K=3": {
       "solver": "ILP_Register_Allocation",
@@ -70,7 +70,7 @@
       ],
       "spill_count": 2,
       "status": 0,
-      "runtime_ms": 24.031100008869544
+      "runtime_ms": 5.3629000030923635
     },
     "K=4": {
       "solver": "ILP_Register_Allocation",
@@ -89,25 +89,25 @@
       ],
       "spill_count": 1,
       "status": 0,
-      "runtime_ms": 23.460099997464567
+      "runtime_ms": 6.292200007010251
     },
     "K=5": {
       "solver": "ILP_Register_Allocation",
       "k_registers": 5,
       "allocation": {
         "a": "R5",
-        "b": "R4",
-        "c": "R3",
-        "d": "R1",
-        "dead1": "R3",
-        "dead2": "R2",
-        "e": "R2",
-        "total": "R3"
+        "b": "R1",
+        "c": "R2",
+        "d": "R4",
+        "dead1": "R2",
+        "dead2": "R3",
+        "e": "R3",
+        "total": "R5"
       },
       "spills": [],
       "spill_count": 0,
       "status": 0,
-      "runtime_ms": 18.465499990270473
+      "runtime_ms": 5.283000005874783
     }
   }
 }

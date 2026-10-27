@@ -5,6 +5,13 @@
 [![Python 3.13](https://img.shields.io/badge/python-3.13-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
 
+> **Quick Navigation**:
+> - Detailed Step-by-Step Instructions & Viva Defense Guide: [`STUDENT_GUIDE.md`](STUDENT_GUIDE.md)
+> - AI Failure Log (3 Documented Cases): [`failure_log.md`](failure_log.md)
+> - Empirical AI Model Comparison: [`ai_tool_comparison.md`](ai_tool_comparison.md)
+> - Comprehensive Technical Report: [`report/technical_report.md`](report/technical_report.md) (or [PDF](report/Assignment8_Technical_Report.pdf))
+> - Vibe-Coding Prompt Logs: [`prompts/`](prompts/)
+
 This repository contains the complete, rigorous, and verifiable submission for **Assignment 8 ("Optimize Anything: The 14-Day Vibe-Coding Challenge")** in Optimization Techniques. Every single track from **Track A through Track J** has been formulated, implemented, benchmarked, and independently verified with zero shortcuts.
 
 ---

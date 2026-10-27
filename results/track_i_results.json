@@ -83,7 +83,7 @@
     "vqc": {
       "model": "Variational_Quantum_Classifier",
       "accuracy_pct": 73.75,
-      "train_time_ms": 858.6478000070201,
+      "train_time_ms": 303.00690000876784,
       "parameter_count": 6,
       "circuit_evaluations": 2576,
       "final_loss": 0.9883468077532515
@@ -91,7 +91,7 @@
     "classical_mlp": {
       "model": "Classical_MLP",
       "accuracy_pct": 73.75,
-      "train_time_ms": 8.797600006801076,
+      "train_time_ms": 2.158999996026978,
       "parameter_count": 17,
       "circuit_evaluations": 0
     }

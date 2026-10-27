@@ -52,7 +52,7 @@
     0
   ],
   "exact_energy": -8.0,
-  "exact_runtime_ms": 0.7981999951880425,
+  "exact_runtime_ms": 0.1860000193119049,
   "sa_cut": 8.0,
   "sa_best_x": [
     0,
@@ -63,7 +63,7 @@
     1
   ],
   "sa_energy": -8.0,
-  "sa_runtime_ms": 56.30110000493005,
+  "sa_runtime_ms": 9.918499999912456,
   "qubo_matrix": [
     [
       -3.0,

@@ -5,14 +5,14 @@
       "sampled_cut": 8.0,
       "expected_cut": 5.7904795011943495,
       "best_bitstring": "010101",
-      "runtime_ms": 945.2481000043917,
+      "runtime_ms": 353.0018999881577,
       "approximation_ratio": 1.0
     },
     "qaoa_spsa": {
       "sampled_cut": 4.0,
-      "expected_cut": 4.711110077816042,
+      "expected_cut": 5.121807365050234,
       "best_bitstring": "001001",
-      "runtime_ms": 332.83379999920726,
+      "runtime_ms": 97.42010000627488,
       "approximation_ratio": 0.5
     }
   },

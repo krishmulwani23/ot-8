@@ -4,24 +4,24 @@
     "greedy": {
       "method": "Greedy",
       "selected_indexes": [
-        "idx_ord_custkey",
-        "idx_ord_orderdate",
-        "idx_cust_mktseg"
+        "idx_li_suppkey",
+        "idx_cust_mktseg",
+        "idx_ord_custkey"
       ],
-      "total_benefit_ms": 3.7322999658295886,
-      "total_size_kb": 245,
-      "runtime_ms": 0.17040000238921493
+      "total_benefit_ms": 1.386899986350909,
+      "total_size_kb": 365,
+      "runtime_ms": 0.05949998740106821
     },
     "dynamic_programming": {
       "method": "DynamicProgramming",
       "selected_indexes": [
-        "idx_ord_orderdate",
+        "idx_ord_custkey",
         "idx_cust_mktseg",
         "idx_li_suppkey"
       ],
-      "total_benefit_ms": 5.419999967468902,
-      "total_size_kb": 385,
-      "runtime_ms": 1.6078000044217333
+      "total_benefit_ms": 1.3868999863509088,
+      "total_size_kb": 365,
+      "runtime_ms": 0.522699992870912
     },
     "ilp_highs": {
       "method": "ILP_HiGHS",
@@ -30,25 +30,25 @@
         "idx_cust_mktseg",
         "idx_li_suppkey"
       ],
-      "total_benefit_ms": 5.419999967468902,
+      "total_benefit_ms": 1.3868999863509088,
       "total_size_kb": 385,
-      "runtime_ms": 34.74469999491703
+      "runtime_ms": 13.810400007059798
     }
   },
   "query_performance": {
     "baseline_latencies_ms": {
-      "Q1_Lineitem_Aggregation": 8.818100002827123,
-      "Q2_Customer_Orders_Join": 1.693599988357164,
-      "Q3_Multi_Table_Join": 8.542399998987094
+      "Q1_Lineitem_Aggregation": 2.308800001628697,
+      "Q2_Customer_Orders_Join": 0.5635999841615558,
+      "Q3_Multi_Table_Join": 1.872900000307709
     },
     "optimized_latencies_ms": {
-      "Q1_Lineitem_Aggregation": 6.639200000790879,
-      "Q2_Customer_Orders_Join": 158.1066000071587,
-      "Q3_Multi_Table_Join": 6.015400009346195
+      "Q1_Lineitem_Aggregation": 2.5569999997969717,
+      "Q2_Customer_Orders_Join": 51.08770000515506,
+      "Q3_Multi_Table_Join": 2.9326000076252967
     },
-    "overall_speedup": 0.1115833104255619,
-    "total_baseline_ms": 19.05409999017138,
-    "total_optimized_ms": 170.76120001729578,
+    "overall_speedup": 0.083872860405906,
+    "total_baseline_ms": 4.745299986097962,
+    "total_optimized_ms": 56.577300012577325,
     "results_identical": true
   },
   "query_plans_explain": {

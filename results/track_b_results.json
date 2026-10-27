@@ -17,7 +17,7 @@
           1,
           1
         ],
-        "runtime_ms": 0.2852000034181401,
+        "runtime_ms": 1.6521000070497394,
         "is_exact": false
       },
       "ILP_HiGHS": {
@@ -38,7 +38,7 @@
         ],
         "status": 0,
         "success": true,
-        "runtime_ms": 29.896399995777756,
+        "runtime_ms": 7.937799993669614,
         "is_exact": true
       },
       "DP": {
@@ -57,7 +57,7 @@
           1,
           1
         ],
-        "runtime_ms": 1.1958000104641542,
+        "runtime_ms": 0.4291999794077128,
         "is_exact": true
       },
       "BranchAndBound": {
@@ -77,7 +77,7 @@
           1
         ],
         "nodes_explored": 17,
-        "runtime_ms": 0.22390000231098384,
+        "runtime_ms": 0.07179999374784529,
         "is_exact": true
       }
     },
@@ -108,7 +108,7 @@
           1,
           1
         ],
-        "runtime_ms": 0.06900000153109431,
+        "runtime_ms": 0.02120001590810716,
         "is_exact": false
       },
       "ILP_HiGHS": {
@@ -139,7 +139,7 @@
         ],
         "status": 0,
         "success": true,
-        "runtime_ms": 125.12440000136849,
+        "runtime_ms": 25.862100010272115,
         "is_exact": true
       },
       "DP": {
@@ -168,7 +168,7 @@
           1,
           0
         ],
-        "runtime_ms": 6.768200008082204,
+        "runtime_ms": 1.898499991511926,
         "is_exact": true
       },
       "BranchAndBound": {
@@ -198,7 +198,7 @@
           0
         ],
         "nodes_explored": 119,
-        "runtime_ms": 0.265800001216121,
+        "runtime_ms": 0.235699990298599,
         "is_exact": true
       }
     },
@@ -239,7 +239,7 @@
           0,
           0
         ],
-        "runtime_ms": 0.10830000974237919,
+        "runtime_ms": 0.022499996703118086,
         "is_exact": false
       },
       "ILP_HiGHS": {
@@ -280,7 +280,7 @@
         ],
         "status": 0,
         "success": true,
-        "runtime_ms": 52.24920000182465,
+        "runtime_ms": 10.275999986333773,
         "is_exact": true
       },
       "DP": {
@@ -319,7 +319,7 @@
           0,
           0
         ],
-        "runtime_ms": 15.947800013236701,
+        "runtime_ms": 3.6950999929104,
         "is_exact": true
       },
       "BranchAndBound": {
@@ -359,7 +359,7 @@
           0
         ],
         "nodes_explored": 120,
-        "runtime_ms": 1.1976999958278611,
+        "runtime_ms": 0.2660999889485538,
         "is_exact": true
       }
     },
@@ -420,7 +420,7 @@
           1,
           1
         ],
-        "runtime_ms": 0.13719999697059393,
+        "runtime_ms": 0.023900007363408804,
         "is_exact": false
       },
       "ILP_HiGHS": {
@@ -481,7 +481,7 @@
         ],
         "status": 0,
         "success": true,
-        "runtime_ms": 32.934800008661114,
+        "runtime_ms": 7.561400008853525,
         "is_exact": true
       },
       "DP": {
@@ -540,7 +540,7 @@
           1,
           1
         ],
-        "runtime_ms": 43.20970000117086,
+        "runtime_ms": 10.854799998924136,
         "is_exact": true
       },
       "BranchAndBound": null
@@ -652,7 +652,7 @@
           0,
           0
         ],
-        "runtime_ms": 0.22289999469649047,
+        "runtime_ms": 0.06699998630210757,
         "is_exact": false
       },
       "ILP_HiGHS": {
@@ -763,7 +763,7 @@
         ],
         "status": 0,
         "success": true,
-        "runtime_ms": 96.2716000067303,
+        "runtime_ms": 31.124499975703657,
         "is_exact": true
       },
       "DP": {
@@ -872,7 +872,7 @@
           0,
           0
         ],
-        "runtime_ms": 178.7086999975145,
+        "runtime_ms": 46.80229999939911,
         "is_exact": true
       },
       "BranchAndBound": null
@@ -932,7 +932,7 @@
       0
     ],
     "exact_energy": -8.0,
-    "exact_runtime_ms": 0.7981999951880425,
+    "exact_runtime_ms": 0.1860000193119049,
     "sa_cut": 8.0,
     "sa_best_x": [
       0,
@@ -943,7 +943,7 @@
       1
     ],
     "sa_energy": -8.0,
-    "sa_runtime_ms": 56.30110000493005,
+    "sa_runtime_ms": 9.918499999912456,
     "qubo_matrix": [
       [
         -3.0,
